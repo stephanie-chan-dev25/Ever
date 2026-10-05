@@ -1,14 +1,6 @@
--- sudo /opt/lampp/manager-linux-x64.run
--- Manage Server
--- MySQL Database Start
--- cd /opt/lampp/bin
--- ./mysql -u root -p
--- 2032
+CREATE DATABASE ever;
 
-
-CREATE DATABASE my_db;
-
-USE my_db;
+USE ever;
 
 CREATE TABLE aliment (
     id INT PRIMARY KEY AUTO_INCREMENT,
@@ -22,7 +14,7 @@ CREATE TABLE nutriment (
     nom VARCHAR(255) NOT NULL
 );
 
-CREATE TABLE Contenir (
+CREATE TABLE contenir (
     aliment_id INT NOT NULL,
     nutriment_id INT NOT NULL,
     qtt DOUBLE NOT NULL,

@@ -5,7 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Accueil - Ever</title>
+    <title>Home - Ever</title>
     <link rel="stylesheet" href="assets/css/recette.css">
     <link rel="stylesheet" href="assets/css/style.css">
     <script src="assets/js/script.js" defer=""></script>
@@ -115,7 +115,7 @@
             <?php if ($totalPages > 1): ?>
                 <div class="pagination">
                     <?php if ($page > 1): ?>
-                        <a class="pagination-link" href="<?php echo buildPaginationUrl($page - 1, $search); ?>">PRECEDENT</a>
+                        <a class="pagination-link" href="<?php echo buildPaginationUrl($page - 1, $search); ?>">PREVIOUS</a>
                     <?php endif; ?>
 
                     <?php for ($i = 1; $i <= $totalPages; $i++): ?>
@@ -127,7 +127,7 @@
                     <?php endfor; ?>
 
                     <?php if ($page < $totalPages): ?>
-                        <a class="pagination-link" href="<?php echo buildPaginationUrl($page + 1, $search); ?>">SUIVANT</a>
+                        <a class="pagination-link" href="<?php echo buildPaginationUrl($page + 1, $search); ?>">NEXT</a>
                     <?php endif; ?>
                 </div>
             <?php endif; ?>
@@ -144,7 +144,7 @@
     </div>
     <div>
         <img src="assets/icon/phone-solid-full.svg" alt="téléphone">
-        <p>(+261) 38 72 735 86</p>
+        <p>(+261) 38 59 297 88</p>
     </div>
     <div>
         <img src="assets/img/logo.svg" alt="Ever">

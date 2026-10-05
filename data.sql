@@ -12,7 +12,7 @@ INSERT INTO nutriment (nom) VALUES
 ('Vitamins'),
 ('Minerals');
 
-INSERT INTO Contenir (aliment_id, nutriment_id, qtt) VALUES
+INSERT INTO contenir (aliment_id, nutriment_id, qtt) VALUES
 -- Carotte
 (1, 1, 8),
 (1, 2, 90),    

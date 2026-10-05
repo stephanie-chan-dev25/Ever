@@ -12,7 +12,7 @@ $row = $result->fetch_assoc()
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fiche - Ever</title>
+    <title>File - Ever</title>
     <link rel="stylesheet" href="../assets/css/style.css">
     <link rel="stylesheet" href="../assets/css/fiche.css">
     <script src="../assets/js/script.js" defer=""></script>
@@ -43,7 +43,7 @@ $row = $result->fetch_assoc()
     <div class="nutrients-sub-content-2">
         <?php
         $sql2 = $conn->prepare("SELECT n.nom AS nutriment, c.qtt
-        FROM Contenir c
+        FROM contenir c
         JOIN nutriment n ON c.nutriment_id = n.id
         WHERE c.aliment_id = ?");
         $sql2->bind_param("i", $id);
