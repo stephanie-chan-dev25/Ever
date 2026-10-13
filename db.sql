@@ -2,28 +2,28 @@ CREATE DATABASE ever;
 
 USE ever;
 
-CREATE TABLE aliment (
+CREATE TABLE food (
     id INT PRIMARY KEY AUTO_INCREMENT,
-    nom VARCHAR(255) NOT NULL,
-    qtt DOUBLE,
-    prix DOUBLE
+    name VARCHAR(255) NOT NULL,
+    quantity DOUBLE,
+    price DOUBLE
 );
 
-CREATE TABLE nutriment (
+CREATE TABLE nutrient (
     id INT PRIMARY KEY AUTO_INCREMENT,
-    nom VARCHAR(255) NOT NULL
+    name VARCHAR(255) NOT NULL
 );
 
-CREATE TABLE contenir (
-    aliment_id INT NOT NULL,
-    nutriment_id INT NOT NULL,
-    qtt DOUBLE NOT NULL,
+CREATE TABLE contains (
+    food_id INT NOT NULL,
+    nutrient_id INT NOT NULL,
+    quantity DOUBLE NOT NULL,
     
-    PRIMARY KEY (aliment_id, nutriment_id),
+    PRIMARY KEY (food_id, nutrient_id),
     
-    FOREIGN KEY (aliment_id) REFERENCES aliment(id)
+    FOREIGN KEY (food_id) REFERENCES food(id)
         ON DELETE CASCADE ON UPDATE CASCADE,
-    FOREIGN KEY (nutriment_id) REFERENCES nutriment(id)
+    FOREIGN KEY (nutrient_id) REFERENCES nutrient(id)
         ON DELETE CASCADE ON UPDATE CASCADE
 );
 

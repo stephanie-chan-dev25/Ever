@@ -1,10 +1,10 @@
-INSERT INTO aliment (nom, qtt, prix) VALUES
+INSERT INTO food (name, quantity, price) VALUES
 ('Carrot', 1, 13083),
 ('Yam', 1, 4261),
 ('Chia seeds', 1, 47987),
 ('Avocado', 1, 21341);
 
-INSERT INTO nutriment (nom) VALUES 
+INSERT INTO nutrient (name) VALUES 
 ('Proteins'),
 ('Carbohydrates'),
 ('Lipids'),
@@ -12,8 +12,8 @@ INSERT INTO nutriment (nom) VALUES
 ('Vitamins'),
 ('Minerals');
 
-INSERT INTO contenir (aliment_id, nutriment_id, qtt) VALUES
--- Carotte
+INSERT INTO contains (food_id, nutrient_id, quantity) VALUES
+
 (1, 1, 8),
 (1, 2, 90),    
 (1, 3, 1),   
@@ -21,7 +21,7 @@ INSERT INTO contenir (aliment_id, nutriment_id, qtt) VALUES
 (1, 5, 0.2),
 (1, 6, 1),
 
--- Patate douce
+
 (2, 1, 16),
 (2, 2, 201),    
 (2, 3, 1),   
@@ -29,7 +29,7 @@ INSERT INTO contenir (aliment_id, nutriment_id, qtt) VALUES
 (2, 5, 0.2),
 (2, 6, 2),
 
--- Graines de chia
+
 (3, 1, 170),
 (3, 2, 420),    
 (3, 3, 310),   
@@ -37,7 +37,7 @@ INSERT INTO contenir (aliment_id, nutriment_id, qtt) VALUES
 (3, 5, 0.05),
 (3, 6, 2),
 
--- Avocat
+
 (4, 1, 20),
 (4, 2, 85),    
 (4, 3, 150),   

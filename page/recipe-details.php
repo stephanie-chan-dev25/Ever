@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Recipe information - Ever</title>
+    <title>Recipe details - Ever</title>
     <link rel="stylesheet" href="../assets/css/style.css">
-    <link rel="stylesheet" href="../assets/css/fiche.css">
-    <link rel="stylesheet" href="../assets/css/infoRecette.css">
+    <link rel="stylesheet" href="../assets/css/product.css">
+    <link rel="stylesheet" href="../assets/css/recipe-details.css">
     <script src="../assets/js/script.js" defer=""></script>
 </head>
 <body class="content">
@@ -16,14 +16,14 @@
     <img class="green-hamburger" src="../assets/icon/hamburger-vert.svg" alt="menu hamburger">
         <ul>
             <li><a href="../index.php">HOME</a></li>
-            <li><a href="recette.php">RECIPES</a></li>
-            <li><a href="panier.php">BASKET</a></li>
+            <li><a href="recipes.php">RECIPES</a></li>
+            <li><a href="cart.php">BASKET</a></li>
             <li><a href="../index.php#contact">CONTACTS</a></li>
         </ul>
 </nav>
-    <a class="back" href="recette.php">
-        <img class="black-back" src="../assets/icon/arrow-left-solid-full.svg" alt="flèche">
-        <img class="green-back" src="../assets/icon/fleche-vert.svg" alt="flèche">
+    <a class="back" href="recipes.php">
+        <img class="black-back" src="../assets/icon/arrow-left-solid-full.svg" alt="back">
+        <img class="green-back" src="../assets/icon/fleche-vert.svg" alt="back">
     </a>
     <?php
     if (isset($_GET['id'])) {
@@ -35,11 +35,10 @@
         if (isset($data['meals'][0])) {
             $details = $data['meals'][0];
     ?>
-    <img class="main-img" src="<?= $details['strMealThumb'] ?>">
+    <img class="main-image" src="<?= $details['strMealThumb'] ?>">
     <h1><?= $details['strMeal'] ?></h1>
     <p class="instructions" ><?= nl2br($details['strInstructions']) ?></p>
     <?php
-            
         }
     }
     ?>

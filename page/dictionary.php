@@ -1,6 +1,6 @@
 <?php
-// Dictionnaire français -> anglais
-$dictionnaire = [
+// French -> english dictionary
+$dictionary = [
     "carotte" => "carrot",
     "avocat" => "avocado",
     "patate douce" => "yam",
