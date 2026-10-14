@@ -14,8 +14,8 @@
 
     <nav>
         <img src="assets/img/logo.svg" alt="Ever">
-        <img class="black-hamburger" src="assets/icon/bars-solid-full.svg" alt="menu hamburger">
-        <img class="green-hamburger" src="assets/icon/hamburger-vert.svg" alt="menu hamburger">
+        <img class="menu-icon-default" src="assets/icon/bars-solid-full.svg" alt="menu icon">
+        <img class="menu-icon-active" src="assets/icon/hamburger-green.svg" alt="menu icon active">
             <ul>
                 <li><a href="#">HOME</a></li>
                 <li><a href="page/recipes.php">RECIPES</a></li>
@@ -120,15 +120,15 @@
             <div class="products-grid">
                 <?php if ($result->num_rows > 0): ?>
                     <?php while ($row = $result->fetch_assoc()): ?>
-                        <div class="food-card">
+                        <div class="product-card-item">
                             <a href="page/product.php?id=<?php echo $row["id"]; ?>">
-                                <img class="food-image" src="assets/img/<?php echo $row["id"]; ?>.png" alt="<?php echo $row["name"]; ?>">
+                                <img class="product-image" src="assets/img/<?php echo $row["id"]; ?>.png" alt="<?php echo $row["name"]; ?>">
                             </a>
                             <p class="food-name"><?php echo $row["name"]; ?></p>
                             <p class="food-quantity"><?php echo $row["quantity"]; ?> kg</p>
                             <div class="food-meta">
                                 <p class="food-price"><?php echo formatNumber($row["price"]); ?> MGA</p>
-                                <a href="page/add-to-cart.php?id=<?php echo $row["id"]; ?>"><img class="basket-icon" src="assets/img/sac-de-courses.png" alt="basket"></a>
+                                <a href="page/add-to-cart.php?id=<?php echo $row["id"]; ?>"><img class="cart-icon" src="assets/img/shopping-bag.png" alt="basket"></a>
                             </div>
                         </div>
                     <?php endwhile; ?>
@@ -140,15 +140,15 @@
             <?php if ($totalPages > 1): ?>
                 <div class="pagination">
                     <?php if ($page > 1): ?>
-                        <a class="pagination-link" href="<?php echo buildPaginationUrl($page - 1, $search); ?>">PREVIOUS</a>
+                        <a class="pagination-button" href="<?php echo buildPaginationUrl($page - 1, $search); ?>">PREVIOUS</a>
                     <?php endif; ?>
 
                     <?php if ($totalPages <= 2): ?>
                         <?php for ($i = 1; $i <= $totalPages; $i++): ?>
                             <?php if ($i === $page): ?>
-                                <span class="pagination-current"><?php echo $i; ?></span>
+                                <span class="pagination-active"><?php echo $i; ?></span>
                             <?php else: ?>
-                                <a class="pagination-link" href="<?php echo buildPaginationUrl($i, $search); ?>"><?php echo $i; ?></a>
+                                <a class="pagination-button" href="<?php echo buildPaginationUrl($i, $search); ?>"><?php echo $i; ?></a>
                             <?php endif; ?>
                         <?php endfor; ?>
                     <?php else: ?>
@@ -158,7 +158,7 @@
                                     <input type="hidden" name="<?php echo htmlspecialchars($key); ?>" value="<?php echo htmlspecialchars($value); ?>">
                                 <?php endif; ?>
                             <?php endforeach; ?>
-                            <select name="page" class="pagination-select" onchange="this.form.submit()">
+                            <select name="page" class="page-selector" onchange="this.form.submit()">
                                 <?php for ($i = 1; $i <= $totalPages; $i++): ?>
                                     <option value="<?php echo $i; ?>" <?php echo $i === $page ? 'selected' : ''; ?>><?php echo $i; ?></option>
                                 <?php endfor; ?>
@@ -167,7 +167,7 @@
                     <?php endif; ?>
 
                     <?php if ($page < $totalPages): ?>
-                        <a class="pagination-link" href="<?php echo buildPaginationUrl($page + 1, $search); ?>">NEXT</a>
+                        <a class="pagination-button" href="<?php echo buildPaginationUrl($page + 1, $search); ?>">NEXT</a>
                     <?php endif; ?>
                 </div>
             <?php endif; ?>
@@ -179,7 +179,7 @@
     </main>
 <footer id="contact">
     <div>
-        <img src="assets/icon/mail.svg" alt="enveloppe">
+        <img src="assets/icon/mail.svg" alt="envelope">
         <p>STEPHANIE.CHAN.DEV@GMAIL.COM</p>
     </div>
     <div>

@@ -1,10 +1,10 @@
-const blackHamburger = document.querySelector(".black-hamburger");
-const greenHamburger = document.querySelector(".green-hamburger");
+const defaultMenuIcon = document.querySelector(".menu-icon-default");
+const activeMenuIcon = document.querySelector(".menu-icon-active");
 const nav = document.querySelector("nav");
 const menu = document.querySelector("nav ul");
 const MOBILE_BREAKPOINT = 800;
 
-if (blackHamburger && greenHamburger && nav && menu) {
+if (defaultMenuIcon && activeMenuIcon && nav && menu) {
   const closeMenu = () => nav.classList.remove("menu-open");
 
   const toggleMenu = () => {
@@ -13,8 +13,8 @@ if (blackHamburger && greenHamburger && nav && menu) {
     }
   };
 
-  blackHamburger.addEventListener("click", toggleMenu);
-  greenHamburger.addEventListener("click", toggleMenu);
+  defaultMenuIcon.addEventListener("click", toggleMenu);
+  activeMenuIcon.addEventListener("click", toggleMenu);
 
   menu.querySelectorAll("a").forEach((link) => {
     link.addEventListener("click", () => {
@@ -30,4 +30,4 @@ if (blackHamburger && greenHamburger && nav && menu) {
     }
   });
 }
-  
+

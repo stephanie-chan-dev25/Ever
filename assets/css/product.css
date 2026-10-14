@@ -29,16 +29,20 @@
     transform: translateY(-2px);
 }
 
-.green-back {
-    display: none;
-}
-
-.back:hover .green-back {
+.back-icon-default {
     display: block;
 }
 
-.back:hover .black-back {
+.back-icon-active {
     display: none;
+}
+
+.back:hover .back-icon-default {
+    display: none;
+}
+
+.back:hover .back-icon-active {
+    display: block;
 }
 
 .main-image {

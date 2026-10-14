@@ -15,8 +15,8 @@ session_start();
 <body>
 <nav>
     <img src="../assets/img/logo.svg" alt="Ever">
-    <img class="black-hamburger" src="../assets/icon/bars-solid-full.svg" alt="menu hamburger">
-    <img class="green-hamburger" src="../assets/icon/hamburger-vert.svg" alt="menu hamburger">
+    <img class="menu-icon-default" src="../assets/icon/bars-solid-full.svg" alt="menu icon">
+    <img class="menu-icon-active" src="../assets/icon/hamburger-green.svg" alt="menu icon active">
         <ul>
             <li><a href="../index.php">HOME</a></li>
             <li><a href="recipes.php">RECIPES</a></li>
@@ -35,20 +35,20 @@ session_start();
 
             for ($i = 0; $i < count($productIds); $i++) { 
         ?>
-        <div class="product-card">
-            <a href="product.php?id=<?php echo $productIds[$i]?>"><img class="product-image" src="../assets/img/<?php echo $productIds[$i];?>.png" alt="<?php echo $productNames[$i] ?? '';?></"></a>
+        <div class="cart-product-card">
+            <a href="product.php?id=<?php echo $productIds[$i]?>"><img class="cart-product-image" src="../assets/img/<?php echo $productIds[$i];?>.png" alt="<?php echo $productNames[$i] ?? '';?></"></a>
             <p class="product-name"><?php echo $productNames[$i] ?? '';?></p>
             <p class="product-quantity"><?php echo formatNumber($productQuantities[$i] ?? 0);?> kg</p>
-            <div class="basket-summary">
+            <div class="cart-summary">
                 <p><?php echo formatNumber($productPrices[$i] ?? 0);?> MGA</p>
-                <a href="#"><img class="basket-icon" src="../assets/img/sac-de-courses.png" alt="basket"></a>
+                <a href="#"><img class="cart-icon" src="../assets/img/shopping-bag.png" alt="basket"></a>
             </div>
         </div>
         <?php
         }
         ?>
     </div>
-    <a href="empty-cart.php" class="basket-button">EMPTY THE BASKET</a>
+    <a href="empty-cart.php" class="empty-cart-button">EMPTY THE BASKET</a>
 </main>
 </body>
 </html>

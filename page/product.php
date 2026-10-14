@@ -20,8 +20,8 @@ $row = $result->fetch_assoc();
 <body class="content">
 <nav>
     <img src="../assets/img/logo.svg" alt="Ever">
-    <img class="black-hamburger" src="../assets/icon/bars-solid-full.svg" alt="menu hamburger">
-    <img class="green-hamburger" src="../assets/icon/hamburger-vert.svg" alt="menu hamburger">
+    <img class="menu-icon-default" src="../assets/icon/bars-solid-full.svg" alt="menu icon">
+    <img class="menu-icon-active" src="../assets/icon/hamburger-green.svg" alt="menu icon active">
         <ul>
             <li><a href="../index.php">HOME</a></li>
             <li><a href="recipes.php">RECIPES</a></li>
@@ -30,8 +30,8 @@ $row = $result->fetch_assoc();
         </ul>
 </nav>
     <a class="back" href="../index.php">
-        <img class="black-back" src="../assets/icon/arrow-left-solid-full.svg" alt="back">
-        <img class="green-back" src="../assets/icon/fleche-vert.svg" alt="back">
+        <img class="back-icon-default" src="../assets/icon/arrow-left-solid-full.svg" alt="back">
+        <img class="back-icon-active" src="../assets/icon/arrow-green.svg" alt="back active">
     </a>
     <img class="main-image" src="../assets/img/<?php echo $id;?>.png" alt="<?php echo $row["name"]?>">
 <div class="product-content">

@@ -12,7 +12,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Segoe UI", Arial, Helvetica, sans-serif;
+    font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
 }
 
 html {
@@ -58,8 +58,8 @@ nav img:first-child {
     width: 110px;
 }
 
-.black-hamburger,
-.green-hamburger {
+.menu-icon-default,
+.menu-icon-active {
     display: none;
     width: 28px;
     height: 28px;
@@ -99,7 +99,7 @@ header {
     justify-content: flex-end;
     min-height: 76vh;
     padding: 42px 6vw;
-    background: linear-gradient(rgba(17, 17, 17, 0.28), rgba(17, 17, 17, 0.28)), url(../img/header.png) center/cover no-repeat;
+    background: linear-gradient(rgba(17, 17, 17, 0.28), rgba(17, 17, 17, 0.28)), url(../img/header-background.png) center/cover no-repeat;
 }
 
 header div {
@@ -133,8 +133,8 @@ header p {
 button,
 .btn,
 .recipe-link,
-.basket-button,
-.pagination-link {
+.empty-cart-button,
+.pagination-button {
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -149,9 +149,9 @@ button,
 
 button,
 .btn,
-.basket-button,
+.empty-cart-button,
 .recipe-link,
-.pagination-link {
+.pagination-button {
     color: var(--black);
     background: var(--yellow);
     box-shadow: none;
@@ -159,15 +159,15 @@ button,
 
 button:hover,
 .btn:hover,
-.basket-button:hover,
+.empty-cart-button:hover,
 .recipe-link:hover,
-.pagination-link:hover {
+.pagination-button:hover {
     background: var(--white);
     color: var(--yellow);
     border-color: var(--yellow);
 }
 
-.pagination-current {
+.pagination-active {
     background: var(--white);
     border-color: var(--yellow);
     color: var(--yellow);
@@ -186,7 +186,7 @@ button:hover,
     justify-content: center;
 }
 
-.pagination-select {
+.page-selector {
     min-width: 90px;
     padding: 11px 14px;
     border-radius: 12px;
@@ -200,7 +200,7 @@ button:hover,
     text-align: center;
 }
 
-.pagination-select:focus {
+.page-selector:focus {
     border-color: var(--yellow);
     box-shadow: 0 0 0 2px rgba(245, 197, 66, 0.15);
 }
@@ -253,9 +253,9 @@ main {
     padding: 24px 0 8px;
 }
 
-.food-card,
-.recipe-card,
-.product-card {
+.product-card-item,
+.recipe-card-item,
+.cart-product-card {
     width: min(300px, 100%);
     display: flex;
     flex-direction: column;
@@ -269,16 +269,16 @@ main {
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.food-card:hover,
-.recipe-card:hover,
-.product-card:hover {
+.product-card-item:hover,
+.recipe-card-item:hover,
+.cart-product-card:hover {
     transform: translateY(-6px);
     box-shadow: 0 28px 60px rgba(17, 17, 17, 0.1);
 }
 
-.food-image,
+.product-image,
 .recipe-image,
-.product-image {
+.cart-product-image {
     width: 100%;
     height: 220px;
     object-fit: cover;
@@ -296,7 +296,7 @@ main {
 }
 
 .food-meta,
-.basket-summary {
+.cart-summary {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -311,13 +311,13 @@ main {
     font-weight: 800;
 }
 
-.basket-icon {
+.cart-icon {
     width: 42px;
     height: 42px;
     transition: transform 0.2s ease;
 }
 
-.basket-icon:hover {
+.cart-icon:hover {
     transform: scale(1.06);
 }
 
@@ -330,8 +330,8 @@ main {
     padding-top: 16px;
 }
 
-.pagination-link,
-.pagination-current {
+.pagination-button,
+.pagination-active {
     min-width: 44px;
     padding: 11px 14px;
     border-radius: 12px;
@@ -341,11 +341,11 @@ main {
     text-align: center;
 }
 
-.pagination-link {
+.pagination-button {
     background: var(--yellow);
 }
 
-.pagination-current {
+.pagination-active {
     background: var(--white);
     border-color: var(--yellow);
     color: var(--yellow);
@@ -408,26 +408,26 @@ footer .logo-ever {
         display: flex;
     }
 
-    .black-hamburger {
+    .menu-icon-default {
         display: block;
     }
 
-    nav.menu-open .black-hamburger {
+    nav.menu-open .menu-icon-default {
         display: none;
     }
 
-    nav.menu-open .green-hamburger {
+    nav.menu-open .menu-icon-active {
         display: block;
     }
 
-    .green-hamburger {
+    .menu-icon-active {
         display: none;
     }
 
     header {
         justify-content: center;
         text-align: left;
-        background: linear-gradient(rgba(17, 17, 17, 0.32), rgba(17, 17, 17, 0.32)), url(../img/en-tête-2.png) center/cover no-repeat;
+        background: linear-gradient(rgba(17, 17, 17, 0.32), rgba(17, 17, 17, 0.32)), url(../img/header-secondary.png) center/cover no-repeat;
     }
 
     header div {

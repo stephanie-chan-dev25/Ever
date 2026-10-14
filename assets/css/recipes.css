@@ -9,7 +9,8 @@ input[type="text"] {
     font-size: 14px;
     border-radius: 25px;
 }
-input[type="submit"]{
+
+input[type="submit"] {
     display: none;
 }
 
@@ -50,7 +51,7 @@ main {
     justify-items: center;
 }
 
-.recipe-card {
+.recipe-card-item {
     width: min(300px, 100%);
     display: flex;
     flex-direction: column;
@@ -64,7 +65,7 @@ main {
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.recipe-card:hover {
+.recipe-card-item:hover {
     transform: translateY(-5px);
     box-shadow: 0 26px 54px rgba(17, 17, 17, 0.08);
 }
