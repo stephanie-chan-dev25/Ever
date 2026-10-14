@@ -51,6 +51,32 @@
             return '?' . http_build_query($params);
         }
 
+        function getVisiblePages(int $currentPage, int $totalPages): array {
+            if ($totalPages <= 7) {
+                return range(1, $totalPages);
+            }
+
+            $pages = [1];
+            $start = max(2, $currentPage - 1);
+            $end = min($totalPages - 1, $currentPage + 1);
+
+            if ($start > 2) {
+                $pages[] = '...';
+            }
+
+            for ($i = $start; $i <= $end; $i++) {
+                $pages[] = $i;
+            }
+
+            if ($end < $totalPages - 1) {
+                $pages[] = '...';
+            }
+
+            $pages[] = $totalPages;
+
+            return $pages;
+        }
+
         $limit = isMobileDevice() ? 4 : 8;
         $page = isset($_GET['page']) ? (int) $_GET['page'] : 1;
         if ($page < 1) {
@@ -117,13 +143,28 @@
                         <a class="pagination-link" href="<?php echo buildPaginationUrl($page - 1, $search); ?>">PREVIOUS</a>
                     <?php endif; ?>
 
-                    <?php for ($i = 1; $i <= $totalPages; $i++): ?>
-                        <?php if ($i === $page): ?>
-                            <span class="pagination-current"><?php echo $i; ?></span>
-                        <?php else: ?>
-                            <a class="pagination-link" href="<?php echo buildPaginationUrl($i, $search); ?>"><?php echo $i; ?></a>
-                        <?php endif; ?>
-                    <?php endfor; ?>
+                    <?php if ($totalPages <= 2): ?>
+                        <?php for ($i = 1; $i <= $totalPages; $i++): ?>
+                            <?php if ($i === $page): ?>
+                                <span class="pagination-current"><?php echo $i; ?></span>
+                            <?php else: ?>
+                                <a class="pagination-link" href="<?php echo buildPaginationUrl($i, $search); ?>"><?php echo $i; ?></a>
+                            <?php endif; ?>
+                        <?php endfor; ?>
+                    <?php else: ?>
+                        <form method="GET" class="pagination-form">
+                            <?php foreach ($_GET as $key => $value): ?>
+                                <?php if ($key !== 'page'): ?>
+                                    <input type="hidden" name="<?php echo htmlspecialchars($key); ?>" value="<?php echo htmlspecialchars($value); ?>">
+                                <?php endif; ?>
+                            <?php endforeach; ?>
+                            <select name="page" class="pagination-select" onchange="this.form.submit()">
+                                <?php for ($i = 1; $i <= $totalPages; $i++): ?>
+                                    <option value="<?php echo $i; ?>" <?php echo $i === $page ? 'selected' : ''; ?>><?php echo $i; ?></option>
+                                <?php endfor; ?>
+                            </select>
+                        </form>
+                    <?php endif; ?>
 
                     <?php if ($page < $totalPages): ?>
                         <a class="pagination-link" href="<?php echo buildPaginationUrl($page + 1, $search); ?>">NEXT</a>
